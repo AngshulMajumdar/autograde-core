@@ -1,0 +1,79 @@
+Metadata-Version: 2.4
+Name: autograde-core
+Version: 0.1.0
+Summary: Generalized multimodal autograding core with a thin FastAPI layer
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi<1,>=0.111
+Requires-Dist: pydantic<3,>=2.7
+Requires-Dist: uvicorn<1,>=0.30
+Requires-Dist: jinja2<4,>=3.1
+Requires-Dist: python-multipart<1,>=0.0.9
+
+
+
+## Production readiness
+
+Run `python scripts/placeholder_audit.py` and `python scripts/production_readiness_check.py` before relying on live LLM grading.
+
+
+## Local install
+
+```bash
+pip install -e .
+```
+
+## Run API
+
+```bash
+uvicorn autograde.api.app:app --reload
+```
+
+## Smoke test API
+
+```bash
+python scripts/smoke_test_api.py
+```
+
+
+## LLM configuration
+
+The API can use Gemini, Ollama, OpenRouter, OpenAI, or the offline mock backend.
+
+Provider selection order in `AUTOGRADE_LLM_PROVIDER=auto` is: Gemini -> Ollama -> OpenRouter -> OpenAI -> Mock.
+
+Useful environment variables:
+
+- `AUTOGRADE_LLM_PROVIDER=auto|gemini|ollama|openrouter|openai|mock`
+- `GEMINI_API_KEY` and optional `GEMINI_MODEL` (default `gemini-3-flash-preview`)
+- `OLLAMA_BASE_URL` and optional `OLLAMA_MODEL`
+- `AUTOGRADE_ALLOW_MOCK_LLM=1|0`
+- `AUTOGRADE_STRICT_LLM=1|0`
+
+API endpoints:
+
+- `GET /health`
+- `GET /version`
+- `GET /llm-status`
+- `POST /validate-rubric`
+- `POST /grade`
+- `POST /demo-grade`
+
+
+## Frontend demo
+
+Run the API and open the root page in a browser:
+
+```bash
+uvicorn autograde.api.app:app --reload
+```
+
+Frontend and upload endpoints:
+
+- `GET /`
+- `POST /grade-upload`
+
+The frontend supports:
+- rubric validation
+- sample and contradiction demo grading
+- multi-file upload grading from the browser
