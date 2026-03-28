@@ -1,0 +1,3 @@
+We implemented Dijkstra's algorithm using an adjacency-list graph representation. The algorithm maintains a priority queue and achieved accuracy 98% on the benchmark.
+
+The implementation uses a priority queue to repeatedly select the node with minimum distance. This description is intentionally close to a known source for integrity testing.
