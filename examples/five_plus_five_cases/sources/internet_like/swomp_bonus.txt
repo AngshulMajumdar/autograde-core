@@ -1,0 +1,3 @@
+Stagewise Weak Orthogonal Matching Pursuit (SWOMP) accelerates OMP by selecting
+multiple atoms at a stage using a thresholding rule instead of committing to only one atom.
+This can reduce the number of outer iterations, although support refinement becomes more delicate.

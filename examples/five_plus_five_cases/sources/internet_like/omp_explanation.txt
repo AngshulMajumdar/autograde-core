@@ -1,0 +1,5 @@
+Orthogonal Matching Pursuit (OMP) is a greedy sparse approximation algorithm.
+At each iteration, it selects the atom with the highest correlation to the current residual.
+The support set is updated, then a least-squares problem is solved over the selected atoms.
+The residual is recomputed, and the process repeats until a stopping criterion is met.
+OMP is widely used in compressed sensing because it is simple and often effective.

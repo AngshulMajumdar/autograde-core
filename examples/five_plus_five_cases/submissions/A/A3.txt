@@ -1,0 +1,3 @@
+Q1. OMP is some sparse approximation algorithm where one keeps selecting useful columns from a matrix until the representation is good. It uses correlation and then updates things, but I am not fully sure of each exact step.
+
+Q2. A possible acceleration is Stagewise Weak Orthogonal Matching Pursuit. The idea is to select more things in a weaker stage and so maybe it becomes faster. However, I am not clear about how the threshold is chosen or why the weak criterion is stable.

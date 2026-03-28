@@ -1,0 +1,3 @@
+Q1. OMP works by greedily selecting one dictionary atom at a time. In every iteration it finds the atom most correlated with the current residual, adds that atom to the active support, recomputes the coefficients by least squares on the active set, and updates the residual. This repeats until the chosen sparsity or residual threshold is reached.
+
+Q2. A faster variant could select more than one candidate at a time or use pre-screening, but I have not explained the method properly here.

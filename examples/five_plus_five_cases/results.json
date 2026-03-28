@@ -1,0 +1,99 @@
+{
+  "A": {
+    "A1": {
+      "raw_score": 90.0,
+      "decision": "HUMAN REVIEW",
+      "external_flags": [],
+      "explanation": [
+        "intra-cohort plagiarism similarity detected"
+      ]
+    },
+    "A2": {
+      "raw_score": 58.5,
+      "decision": "HUMAN REVIEW",
+      "external_flags": [
+        {
+          "source": "omp_explanation.txt",
+          "jaccard": 0.864,
+          "longest_common_span_words": 69,
+          "severity": "high"
+        }
+      ],
+      "explanation": [
+        "external plagiarism detected"
+      ]
+    },
+    "A3": {
+      "raw_score": 35.0,
+      "decision": "AUTO GRADE",
+      "external_flags": [],
+      "explanation": []
+    },
+    "A4": {
+      "raw_score": 52.8,
+      "decision": "HUMAN REVIEW",
+      "external_flags": [
+        {
+          "source": "swomp_bonus.txt",
+          "jaccard": 0.404,
+          "longest_common_span_words": 40,
+          "severity": "high"
+        }
+      ],
+      "explanation": [
+        "external plagiarism detected",
+        "intra-cohort plagiarism similarity detected"
+      ]
+    },
+    "A5": {
+      "raw_score": 65.0,
+      "decision": "AUTO GRADE",
+      "external_flags": [],
+      "explanation": []
+    }
+  },
+  "B": {
+    "B1": {
+      "raw_score": 86.0,
+      "decision": "AUTO GRADE",
+      "external_flags": [],
+      "explanation": []
+    },
+    "B2": {
+      "raw_score": 42.0,
+      "decision": "AUTO GRADE",
+      "external_flags": [],
+      "explanation": []
+    },
+    "B3": {
+      "raw_score": 63.0,
+      "decision": "AUTO GRADE",
+      "external_flags": [],
+      "explanation": []
+    },
+    "B4": {
+      "raw_score": 84.0,
+      "decision": "AUTO GRADE",
+      "external_flags": [],
+      "explanation": []
+    },
+    "B5": {
+      "raw_score": 41.0,
+      "decision": "AUTO GRADE",
+      "external_flags": [],
+      "explanation": []
+    }
+  },
+  "summary": {
+    "intra_A_pairs": [
+      {
+        "a": "A1.txt",
+        "b": "A4.txt",
+        "jaccard": 0.675,
+        "longest_common_span_words": 98,
+        "severity": "high"
+      }
+    ],
+    "intra_B_pairs": []
+  }
+}
