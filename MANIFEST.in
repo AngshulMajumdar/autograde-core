@@ -1,0 +1,2 @@
+recursive-include autograde/api/templates *.html
+recursive-include autograde/api/static *.css
