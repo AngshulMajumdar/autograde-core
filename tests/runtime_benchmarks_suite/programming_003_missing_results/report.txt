@@ -1,0 +1,9 @@
+Title: Short Technical Report
+
+We implemented Dijkstra's algorithm because it gives the shortest path in graphs with nonnegative weights. Therefore the approach is suitable here.
+
+The code uses an adjacency list and a priority queue. However, the report does not discuss all edge cases in detail.
+
+We conclude that the method works well on the provided inputs.
+
+The benchmark comparison was omitted, and results are still preliminary.

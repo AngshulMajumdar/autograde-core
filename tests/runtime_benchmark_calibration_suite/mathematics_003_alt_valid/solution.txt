@@ -1,0 +1,1 @@
+Let a=2m and b=2n. Then a+b = 2m+2n = 2(m+n). Since m+n is an integer, the sum is even. Thus the claim follows.

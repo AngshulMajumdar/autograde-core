@@ -1,0 +1,2 @@
+Title: Minimal circuit note
+This design likely works.

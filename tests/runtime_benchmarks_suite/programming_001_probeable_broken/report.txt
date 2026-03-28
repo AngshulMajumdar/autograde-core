@@ -1,0 +1,5 @@
+Title: Probeable Programming Report
+
+We implemented Dijkstra's algorithm for shortest paths. The implementation uses a priority queue and should return correct path distances on small graphs.
+
+The top-level script still contains machine-specific file paths, so direct execution may fail, but the core function is present.

@@ -1,0 +1,10 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='640' height='320'>
+  <g id='input_node'><text x='20' y='80'>Input</text></g>
+  <g id='resistor_R1'><text x='120' y='80'>R1</text></g>
+  <g id='capacitor_C1'><text x='220' y='140'>C1</text></g>
+  <g id='op_amp_stage'><text x='300' y='100'>OP_AMP</text></g>
+  <g id='feedback_path'><text x='260' y='60'>feedback</text></g>
+  <g id='output_node'><text x='520' y='100'>Output</text></g>
+  <g id='ground'><text x='200' y='210'>ground</text></g>
+  <text x='340' y='35'>active lowpass family</text>
+</svg>

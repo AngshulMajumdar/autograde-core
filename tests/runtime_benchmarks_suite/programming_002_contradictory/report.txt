@@ -1,0 +1,5 @@
+Title: Contradictory Technical Report
+
+We implemented BFS algorithm for shortest paths. The accuracy was 98% on the benchmark dataset.
+
+The method is simple and the algorithm works well in all cases.

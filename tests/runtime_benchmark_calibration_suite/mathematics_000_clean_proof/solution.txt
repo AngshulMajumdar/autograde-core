@@ -1,0 +1,7 @@
+Title: Proof Submission
+
+We prove that the sum of two even integers is even. Let a = 2m and b = 2n for integers m and n. Since a and b are even, they each have the stated form.
+
+Therefore,
+ a + b = 2m + 2n = 2(m+n).
+Because m+n is an integer, the quantity a+b is divisible by 2. Hence the sum is even, which proves the claim.

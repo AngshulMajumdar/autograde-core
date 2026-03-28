@@ -1,0 +1,3 @@
+Title: Alternative Circuit Design
+
+The circuit uses a nonstandard arrangement but still includes an op-amp, input path, output node, and a feedback relation. The report explains the design intention and the target behavior.

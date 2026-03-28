@@ -1,0 +1,7 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='640' height='320'>
+  <g id='input_node'><text x='20' y='80'>Input</text></g>
+  <g id='resistor_Rx'><text x='120' y='80'>Rx</text></g>
+  <g id='op_amp_alt'><text x='300' y='100'>OPAMP</text></g>
+  <g id='feedback_path'><text x='260' y='60'>feedback</text></g>
+  <g id='output_node'><text x='520' y='100'>Output</text></g>
+</svg>

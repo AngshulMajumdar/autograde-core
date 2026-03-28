@@ -1,0 +1,7 @@
+Title: Enzyme Activity Lab Report
+
+Method: We measured enzyme activity at different temperatures using the same assay volume and reaction time. The setup section states the temperature conditions and the observed reaction-rate variable.
+
+Results: The observations show that activity increases from the low-temperature condition to a middle condition and then drops at the highest temperature. Therefore the data suggest an optimal intermediate temperature.
+
+Interpretation: This suggests that both insufficient thermal energy and denaturation can reduce activity.

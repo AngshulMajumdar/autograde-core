@@ -1,0 +1,7 @@
+Title: Active Filter Design Report
+
+This submission uses an op-amp feedback design to realize the required low-pass behavior. The input signal enters the op-amp stage, and the RC feedback path sets the response.
+
+The design explanation states that the topology is one valid active-filter family rather than a unique diagram. The target behavior is low-pass filtering with stable output gain in the pass band.
+
+Simulation results are reported through gain and cutoff values, and the report argues that those values are consistent with the intended behavior.
