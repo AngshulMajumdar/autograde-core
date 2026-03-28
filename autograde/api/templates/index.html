@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autograde Core Demo</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="hero card">
+      <div>
+        <h1>Autograde Core Demo</h1>
+        <p>Validate rubrics, run demo grading, and upload submissions against the API.</p>
+      </div>
+      <div class="status-grid">
+        <div><span>Provider</span><strong>{{ llm_status.provider_class }}</strong></div>
+        <div><span>Live</span><strong>{{ llm_status.is_live }}</strong></div>
+        <div><span>Mock</span><strong>{{ llm_status.is_mock }}</strong></div>
+        <div><span>Configured</span><strong>{{ llm_status.env_provider }}</strong></div>
+      </div>
+    </section>
+
+    <section class="grid-two">
+      <div class="card">
+        <h2>Demo grade</h2>
+        <div class="row gap">
+          <button class="btn" onclick="runDemo('sample')">Run sample</button>
+          <button class="btn secondary" onclick="runDemo('contradiction')">Run contradiction</button>
+        </div>
+        <pre id="demo-output" class="output">Waiting for demo run...</pre>
+      </div>
+
+      <div class="card">
+        <h2>Validate rubric</h2>
+        <button class="btn" onclick="validateRubric()">Validate current rubric</button>
+        <pre id="validate-output" class="output">Waiting for validation...</pre>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Upload and grade</h2>
+      <form id="grade-form" class="stack">
+        <div class="grid-two">
+          <label>
+            Assignment ID
+            <input type="text" name="assignment_id" value="CS301_A2" required />
+          </label>
+          <label>
+            Submission ID
+            <input type="text" name="submission_id" value="submission_web_001" required />
+          </label>
+        </div>
+        <label>
+          Student ID
+          <input type="text" name="student_id" value="student_demo" />
+        </label>
+        <label>
+          Rubric JSON
+          <textarea id="rubric-json" name="rubric_json" rows="22">{{ demo_rubric_json }}</textarea>
+        </label>
+        <label>
+          Submission files
+          <input type="file" id="files" name="files" multiple required />
+        </label>
+        <div class="row gap">
+          <button type="submit" class="btn">Grade uploaded files</button>
+          <button type="button" class="btn secondary" onclick="loadDemoRubric()">Reset demo rubric</button>
+        </div>
+      </form>
+      <pre id="grade-output" class="output">Waiting for upload...</pre>
+    </section>
+  </main>
+
+  <script>
+    const demoRubric = {{ demo_rubric_json | tojson }};
+
+    function prettyPrint(targetId, payload) {
+      document.getElementById(targetId).textContent = JSON.stringify(payload, null, 2);
+    }
+
+    async function runDemo(scenario) {
+      const response = await fetch('/demo-grade', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ scenario })
+      });
+      prettyPrint('demo-output', await response.json());
+    }
+
+    async function validateRubric() {
+      const rubric = JSON.parse(document.getElementById('rubric-json').value);
+      const response = await fetch('/validate-rubric', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ rubric })
+      });
+      prettyPrint('validate-output', await response.json());
+    }
+
+    function loadDemoRubric() {
+      document.getElementById('rubric-json').value = JSON.stringify(JSON.parse(demoRubric), null, 2);
+    }
+
+    document.getElementById('grade-form').addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const formData = new FormData();
+      const form = event.target;
+      formData.append('assignment_id', form.assignment_id.value);
+      formData.append('submission_id', form.submission_id.value);
+      formData.append('student_id', form.student_id.value);
+      formData.append('rubric_json', document.getElementById('rubric-json').value);
+      for (const file of document.getElementById('files').files) {
+        formData.append('files', file);
+      }
+      const response = await fetch('/grade-upload', {
+        method: 'POST',
+        body: formData,
+      });
+      prettyPrint('grade-output', await response.json());
+    });
+  </script>
+</body>
+</html>
