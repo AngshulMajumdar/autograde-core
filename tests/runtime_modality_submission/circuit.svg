@@ -1,0 +1,13 @@
+
+        <svg xmlns='http://www.w3.org/2000/svg' width='300' height='140'>
+          <text x='10' y='20'>input</text>
+          <text x='240' y='20'>output</text>
+          <text x='120' y='70'>op_amp</text>
+          <text x='20' y='70'>resistor</text>
+          <text x='200' y='70'>capacitor</text>
+          <text x='110' y='110'>feedback</text>
+          <line x1='20' y1='60' x2='120' y2='60' />
+          <line x1='140' y1='60' x2='240' y2='60' />
+          <path d='M240,60 L240,100 L120,100' />
+        </svg>
+        
